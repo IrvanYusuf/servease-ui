@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://servease-ui.vercel.app"),
   alternates: {
     canonical: "/",
     languages: {
@@ -47,17 +46,17 @@ export const metadata: Metadata = {
     title: "RepairService - Platform Jasa Perbaikan Terpercaya #1 di Indonesia",
     description:
       "Hubungkan diri Anda dengan ribuan teknisi profesional untuk semua kebutuhan perbaikan. Booking online, harga transparan, garansi service, dan rating terpercaya.",
-    url: "https://servease-ui.vercel.app/",
+    url: "https://servease-ui.vercel.app",
     siteName: "RepairService Indonesia",
     images: [
       {
-        url: "/ac-mechanic.png",
+        url: "https://servease-ui.vercel.app/ac-mechanic.png",
         width: 1200,
         height: 630,
         alt: "RepairService - Platform Jasa Perbaikan Terpercaya",
       },
       {
-        url: "/logo.svg",
+        url: "https://servease-ui.vercel.app/logo.svg",
         width: 800,
         height: 800,
         alt: "RepairService App",
