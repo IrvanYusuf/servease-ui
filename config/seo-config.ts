@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  metadataBase: new URL("https://servease-ui.vercel.app/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -46,17 +47,17 @@ export const metadata: Metadata = {
     title: "RepairService - Platform Jasa Perbaikan Terpercaya #1 di Indonesia",
     description:
       "Hubungkan diri Anda dengan ribuan teknisi profesional untuk semua kebutuhan perbaikan. Booking online, harga transparan, garansi service, dan rating terpercaya.",
-    url: "https://servease-ui.vercel.app",
+    url: "https://servease-ui.vercel.app/",
     siteName: "RepairService Indonesia",
     images: [
       {
-        url: "https://servease-ui.vercel.app/ac-mechanic.png",
+        url: "/ac-mechanic.png",
         width: 1200,
         height: 630,
         alt: "RepairService - Platform Jasa Perbaikan Terpercaya",
       },
       {
-        url: "https://servease-ui.vercel.app/logo.svg",
+        url: "/logo.svg",
         width: 800,
         height: 800,
         alt: "RepairService App",
@@ -64,15 +65,6 @@ export const metadata: Metadata = {
     ],
     locale: "id_ID",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "RepairService - Platform Jasa Perbaikan Terpercaya",
-    description:
-      "Temukan teknisi profesional untuk semua kebutuhan perbaikan Anda",
-    images: ["/twitter-repair-service.jpg"],
-    creator: "@repairservice_id",
-    site: "@repairservice_id",
   },
   robots: {
     index: true,
@@ -157,7 +149,7 @@ export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://servease-ui.vercel.app/#website",
-  url: "https://www.repairservice.id",
+  url: "https://servease-ui.vercel.app",
   name: "RepairService Indonesia",
   description:
     "Platform jasa perbaikan terpercaya yang menghubungkan pelanggan dengan teknisi profesional",
