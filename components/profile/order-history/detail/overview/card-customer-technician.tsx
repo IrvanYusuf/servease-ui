@@ -47,7 +47,7 @@ const CardCustomerTechnician: FC<CardCustomerTechnicianProps> = ({
         </CardHeader>
         <CardContent>
           <div className="flex items-start space-x-3">
-            <div className="w-12 h-12 rounded-full object-cover">
+            <div className="w-12 h-12 rounded-full relative object-cover">
               <Image
                 src={bookingData.partner_id.profile_image || "/placeholder.png"}
                 alt={bookingData.partner_id.name}
