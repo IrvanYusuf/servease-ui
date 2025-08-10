@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://servease-ui.vercel.app/"),
+  metadataBase: new URL("https://servease-ui.vercel.app"),
   alternates: {
     canonical: "/",
     languages: {
