@@ -53,7 +53,7 @@ const ModalChangeAddress = () => {
           Ganti Alamat
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Alamat Saya</DialogTitle>
           <Separator />
