@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.repairservice.id/"),
+  metadataBase: new URL("https://servease-ui.vercel.app/"),
   alternates: {
     canonical: "/",
     languages: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "RepairService - Platform Jasa Perbaikan Terpercaya #1 di Indonesia",
     description:
       "Hubungkan diri Anda dengan ribuan teknisi profesional untuk semua kebutuhan perbaikan. Booking online, harga transparan, garansi service, dan rating terpercaya.",
-    url: "https://www.repairservice.id/",
+    url: "https://servease-ui.vercel.app/",
     siteName: "RepairService Indonesia",
     images: [
       {
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "@id": "https://www.repairservice.id/#organization",
+  "@id": "https://servease-ui.vercel.app/#organization",
   name: "RepairService Indonesia",
   alternateName: "RepairService",
   description:
@@ -102,11 +102,11 @@ export const organizationJsonLd = {
   url: "https://www.repairservice.id",
   logo: {
     "@type": "ImageObject",
-    url: "https://www.repairservice.id/logo.svg",
+    url: "https://servease-ui.vercel.app/logo.svg",
     width: 512,
     height: 512,
   },
-  image: "https://www.repairservice.id/ac-mechanic.png",
+  image: "https://servease-ui.vercel.app/ac-mechanic.png",
   telephone: "+62-21-12345678",
   email: "support@repairservice.id",
   address: {
@@ -157,13 +157,13 @@ export const organizationJsonLd = {
 export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "@id": "https://www.repairservice.id/#website",
+  "@id": "https://servease-ui.vercel.app/#website",
   url: "https://www.repairservice.id",
   name: "RepairService Indonesia",
   description:
     "Platform jasa perbaikan terpercaya yang menghubungkan pelanggan dengan teknisi profesional",
   publisher: {
-    "@id": "https://www.repairservice.id/#organization",
+    "@id": "https://servease-ui.vercel.app/#organization",
   },
   potentialAction: [
     {
@@ -171,7 +171,7 @@ export const websiteJsonLd = {
       target: {
         "@type": "EntryPoint",
         urlTemplate:
-          "https://www.repairservice.id/search?q={search_term_string}",
+          "https://servease-ui.vercel.app/search?q={search_term_string}",
       },
       "query-input": "required name=search_term_string",
     },
@@ -187,7 +187,7 @@ export const serviceJsonLd = {
   description:
     "Layanan platform yang menghubungkan pelanggan dengan penyedia jasa perbaikan profesional untuk berbagai kebutuhan maintenance dan repair",
   provider: {
-    "@id": "https://www.repairservice.id/#organization",
+    "@id": "https://servease-ui.vercel.app/#organization",
   },
   areaServed: {
     "@type": "Country",

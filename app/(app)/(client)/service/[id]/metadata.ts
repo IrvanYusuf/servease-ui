@@ -45,16 +45,16 @@ export const generateServiceDetailMetadata = (service: Service): Metadata => ({
 export const generateServiceDetailJsonLd = (service: Service) => ({
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": `https://www.repairservice.id/service/${service._id}`,
+  "@id": `https://servease-ui.vercel.app/service/${service._id}`,
   name: service.name,
   description: service.description,
   image: service.thumbnail || ["/ac-mechanic.png"],
-  url: `https://www.repairservice.id/service/${service._id}`,
+  url: `https://servease-ui.vercel.app/service/${service._id}`,
   category: service.category_id.name,
   provider: {
     "@type": "Organization",
     name: service.partner_id.name,
-    url: `https://www.repairservice.id/service/${service._id}`,
+    url: `https://servease-ui.vercel.app/service/${service._id}`,
     telephone: service.user_id.phone,
     address: {
       "@type": "PostalAddress",
