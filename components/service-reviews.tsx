@@ -18,7 +18,7 @@ const reviews = [
   {
     id: 1,
     name: "Budi Santoso",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/review1.avif",
     rating: 5,
     date: "2 minggu lalu",
     comment:
@@ -29,7 +29,7 @@ const reviews = [
   {
     id: 2,
     name: "Sari Dewi",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/review2.avif",
     rating: 5,
     date: "1 minggu lalu",
     comment:
@@ -40,7 +40,7 @@ const reviews = [
   {
     id: 3,
     name: "Ahmad Rahman",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/review3.avif",
     rating: 4,
     date: "3 hari lalu",
     comment:
@@ -51,7 +51,7 @@ const reviews = [
   {
     id: 4,
     name: "Linda Wijaya",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "/review4.avif",
     rating: 5,
     date: "1 bulan lalu",
     comment:
@@ -153,19 +153,21 @@ export default function ServiceReviews() {
           <Card key={review.id}>
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">
-                <Image
-                  width={40}
-                  height={40}
-                  src={review.avatar || "/placeholder.png"}
-                  alt={review.name}
-                  className="rounded-full object-cover"
-                />
+                <div className="relative shrink-0 w-10 h-10">
+                  <Image
+                    width={40}
+                    height={40}
+                    src={review.avatar || "/placeholder.png"}
+                    alt={review.name}
+                    className="rounded-full object-cover shrink-0 h-full w-full"
+                  />
+                </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <span className="font-medium">{review.name}</span>
                       {review.verified && (
-                        <Badge variant="secondary" className="text-xs">
+                        <Badge className="text-xs bg-green-100 text-green-800 hover:bg-green-100">
                           Verified
                         </Badge>
                       )}
