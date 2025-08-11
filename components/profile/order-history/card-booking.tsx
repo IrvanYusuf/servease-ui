@@ -30,14 +30,15 @@ const CardBooking: FC<CardBookingProps> = ({ order }) => {
       <CardContent className="p-6">
         <div className="flex flex-col lg:flex-row lg:items-center gap-4">
           {/* Order Image & Info */}
-          <div className="flex items-start space-x-4 flex-1">
-            <Image
-              src={order.service_id.thumbnail || "/placeholder.png"}
-              alt={order.service_id.name}
-              width={64}
-              height={64}
-              className="rounded-lg object-cover"
-            />
+          <div className="flex flex-col md:flex-row items-start space-x-4 flex-1">
+            <div className="relative w-full h-52 md:w-16 md:h-16">
+              <Image
+                src={order.service_id.thumbnail || "/placeholder.png"}
+                alt={order.service_id.name}
+                fill
+                className="rounded-lg object-cover"
+              />
+            </div>
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <Badge className="text-xs bg-blue-100 text-blue-800">
@@ -87,7 +88,7 @@ const CardBooking: FC<CardBookingProps> = ({ order }) => {
           </div>
 
           {/* Price & Actions */}
-          <div className="flex flex-col items-end space-y-3">
+          <div className="flex flex-col md:items-end space-y-3">
             <Badge className={`text-xs`} variant={"secondary"}>
               {order.payment_method_id.name}
             </Badge>
@@ -98,7 +99,7 @@ const CardBooking: FC<CardBookingProps> = ({ order }) => {
             >
               {statusReviewConfig[order.review_status].label}
             </Badge>
-            <div className="text-right">
+            <div className="md:text-right">
               <div className="text-lg font-bold text-gray-900">
                 Rp {order.total_price.toLocaleString("id-ID")}
               </div>
