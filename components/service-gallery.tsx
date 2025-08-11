@@ -18,15 +18,19 @@ export default function ServiceGallery({
   const [currentImage, setCurrentImage] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const galleryImage = [thumbnail, ...images];
+
   const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
+    setCurrentImage((prev) => (prev + 1) % galleryImage.length);
   };
 
   const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    setCurrentImage(
+      (prev) => (prev - 1 + galleryImage.length) % galleryImage.length
+    );
   };
 
-  const galleryImage = [thumbnail, ...images];
+  console.log({ galleryImage, currentImage });
 
   return (
     <>
