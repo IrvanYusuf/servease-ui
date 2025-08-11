@@ -109,7 +109,7 @@ export default function ServiceGallery({
               <IoIosCloseCircle className="w-8 h-8" />
             </div>
             <Image
-              src={images[currentImage] || "/placeholder.png"}
+              src={galleryImage[currentImage] || "/placeholder.png"}
               alt="Service image"
               width={800}
               height={600}
