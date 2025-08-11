@@ -13,7 +13,7 @@ export default function TechnicianProfile({ service }: TechnicianProfileProps) {
   return (
     <Card>
       <CardContent className="p-6">
-        <div className="flex items-start space-x-4">
+        <div className="flex flex-col md:flex-row items-start space-x-4">
           <div className="w-20 aspect-square relative shrink-0 rounded-full overflow-hidden">
             <Image
               src={service.thumbnail ?? "/mechanic.avif"}
@@ -43,7 +43,7 @@ export default function TechnicianProfile({ service }: TechnicianProfileProps) {
             </div>
 
             <p
-              className="text-gray-700 mb-4"
+              className="text-gray-700 mb-4 text-justify"
               dangerouslySetInnerHTML={{
                 __html: truncateText({
                   text: service?.description || "",
