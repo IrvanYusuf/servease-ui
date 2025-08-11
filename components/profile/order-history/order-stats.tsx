@@ -5,7 +5,7 @@ const OrderStats = () => {
   const { totalBooking, totalBookingCompleted, totalNotReviewed } =
     useBookingStatsStore();
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full min-w-0">
       <Card>
         <CardContent className="p-4 text-center">
           <div className="text-2xl font-bold text-blue-600 mb-1">
