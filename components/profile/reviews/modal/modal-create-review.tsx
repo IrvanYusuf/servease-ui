@@ -92,7 +92,7 @@ const ModalCreateReview: FC<ModalCreateReviewProps> = ({ booking }) => {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="cursor-pointer"
+          className="cursor-pointer w-full md:w-auto"
           onClick={() => setIsOpen(true)}
         >
           <Star className="w-4 h-4 mr-2" />

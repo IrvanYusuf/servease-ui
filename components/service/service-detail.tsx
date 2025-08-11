@@ -34,8 +34,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { PATHS } from "@/lib/paths";
+import { useState } from "react";
+import { truncateText } from "@/lib/utils";
 
 export default function ServiceDetail({ serviceId }: { serviceId: string }) {
+  const [showMore, setShowMore] = useState(false);
   const { data: dataServiceDetail, isLoading } = useQuery({
     queryKey: ["service-detail", serviceId],
     queryFn: () => ServicesServices.getServiceDetail(serviceId),
@@ -128,14 +131,27 @@ export default function ServiceDetail({ serviceId }: { serviceId: string }) {
                 </Button>
               </div>
             </div>
-
-            <p
-              className="text-gray-700 leading-relaxed mb-6 text-justify"
-              dangerouslySetInnerHTML={{
-                __html: dataServiceDetail?.data.description || "",
-              }}
-            ></p>
-
+            <div className="mb-6">
+              <p
+                className="text-gray-700 leading-relaxed text-justify"
+                dangerouslySetInnerHTML={{
+                  __html: showMore
+                    ? dataServiceDetail?.data.description || ""
+                    : truncateText({
+                        length: 100,
+                        text: dataServiceDetail?.data?.description ?? "",
+                      }),
+                }}
+              ></p>
+              <div
+                className="text-sm font-semibold mt-2"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore
+                  ? "Tampilkan lebih sedikit"
+                  : "Tampilkan lebih banyak"}
+              </div>
+            </div>
             {/* Service Info Cards */}
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <Card>
