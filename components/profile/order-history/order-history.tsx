@@ -54,9 +54,9 @@ export default function OrderHistory() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 w-full">
       {/* Page Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full">
         <div>
           <h1 className="text-3xl font-bold text-gray-900">
             Riwayat Pemesanan
@@ -90,24 +90,47 @@ export default function OrderHistory() {
       <OrderStats />
 
       {/* Order Tabs */}
-      <Tabs value={selectedTab} onValueChange={setSelectedTab}>
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="" className="cursor-pointer">
-            Semua
-          </TabsTrigger>
-          <TabsTrigger value="pending" className="cursor-pointer">
-            Menunggu Konfirmasi
-          </TabsTrigger>
-          <TabsTrigger value="confirmed" className="cursor-pointer">
-            Berlangsung
-          </TabsTrigger>
-          <TabsTrigger value="cancelled" className="cursor-pointer">
-            Dibatalkan
-          </TabsTrigger>
-          <TabsTrigger value="completed" className="cursor-pointer">
-            Selesai
-          </TabsTrigger>
-        </TabsList>
+      <Tabs
+        value={selectedTab}
+        onValueChange={setSelectedTab}
+        className="w-full"
+      >
+        <div className="relative rounded-sm overflow-x-auto h-10 bg-muted">
+          <TabsList className="absolute flex flex-row w-full min-w-max left-0 top-0 h-10 items-center">
+            <div className="w-4 flex-shrink-0" aria-hidden />
+            <TabsTrigger
+              value=""
+              className="h-8 px-4 w-full whitespace-nowrap flex-shrink-0"
+            >
+              Semua
+            </TabsTrigger>
+            <TabsTrigger
+              value="pending"
+              className="h-8 px-4 w-full whitespace-nowrap flex-shrink-0"
+            >
+              Menunggu Konfirmasi
+            </TabsTrigger>
+            <TabsTrigger
+              value="confirmed"
+              className="h-8 px-4 w-full whitespace-nowrap flex-shrink-0"
+            >
+              Berlangsung
+            </TabsTrigger>
+            <TabsTrigger
+              value="cancelled"
+              className="h-8 px-4 w-full whitespace-nowrap flex-shrink-0"
+            >
+              Dibatalkan
+            </TabsTrigger>
+            <TabsTrigger
+              value="completed"
+              className="h-8 px-4 w-full whitespace-nowrap flex-shrink-0"
+            >
+              Selesai
+            </TabsTrigger>
+            <div className="w-4 flex-shrink-0" aria-hidden />
+          </TabsList>
+        </div>
 
         <TabsContent value={selectedTab} className="space-y-4 mt-6">
           {isLoading ? (
