@@ -169,26 +169,6 @@ export default function Testimonials() {
             ))}
           </div>
         </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">10K+</div>
-            <div className="text-gray-600">Pelanggan Puas</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-            <div className="text-gray-600">Teknisi Ahli</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">4.8</div>
-            <div className="text-gray-600">Rating Rata-rata</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
-            <div className="text-gray-600">Layanan Darurat</div>
-          </div>
-        </div>
       </div>
     </section>
   );
