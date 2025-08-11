@@ -1,31 +1,31 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Slider } from "@/components/ui/slider"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { X } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Slider } from "@/components/ui/slider";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { X } from "lucide-react";
 
 export default function CategoryFilters() {
-  const [priceRange, setPriceRange] = useState([0, 1000000])
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([])
+  const [priceRange, setPriceRange] = useState([0, 1000000]);
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
   const addFilter = (filter: string) => {
     if (!selectedFilters.includes(filter)) {
-      setSelectedFilters([...selectedFilters, filter])
+      setSelectedFilters([...selectedFilters, filter]);
     }
-  }
+  };
 
   const removeFilter = (filter: string) => {
-    setSelectedFilters(selectedFilters.filter((f) => f !== filter))
-  }
+    setSelectedFilters(selectedFilters.filter((f) => f !== filter));
+  };
 
   const clearAllFilters = () => {
-    setSelectedFilters([])
-    setPriceRange([0, 1000000])
-  }
+    setSelectedFilters([]);
+    setPriceRange([0, 1000000]);
+  };
 
   return (
     <div className="space-y-6">
@@ -43,9 +43,16 @@ export default function CategoryFilters() {
           <CardContent className="pt-0">
             <div className="flex flex-wrap gap-2">
               {selectedFilters.map((filter) => (
-                <Badge key={filter} variant="secondary" className="flex items-center gap-1">
+                <Badge
+                  key={filter}
+                  variant="secondary"
+                  className="flex items-center gap-1"
+                >
                   {filter}
-                  <X className="w-3 h-3 cursor-pointer" onClick={() => removeFilter(filter)} />
+                  <X
+                    className="w-3 h-3 cursor-pointer"
+                    onClick={() => removeFilter(filter)}
+                  />
                 </Badge>
               ))}
             </div>
@@ -60,7 +67,13 @@ export default function CategoryFilters() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <Slider value={priceRange} onValueChange={setPriceRange} max={1000000} step={50000} className="w-full" />
+            <Slider
+              value={priceRange}
+              onValueChange={setPriceRange}
+              max={1000000}
+              step={50000}
+              className="w-full"
+            />
             <div className="flex justify-between text-sm text-gray-600">
               <span>Rp {priceRange[0].toLocaleString("id-ID")}</span>
               <span>Rp {priceRange[1].toLocaleString("id-ID")}</span>
@@ -82,13 +95,16 @@ export default function CategoryFilters() {
                   id={`rating-${rating}`}
                   onCheckedChange={(checked) => {
                     if (checked) {
-                      addFilter(`${rating} bintang ke atas`)
+                      addFilter(`${rating} bintang ke atas`);
                     } else {
-                      removeFilter(`${rating} bintang ke atas`)
+                      removeFilter(`${rating} bintang ke atas`);
                     }
                   }}
                 />
-                <label htmlFor={`rating-${rating}`} className="text-sm cursor-pointer">
+                <label
+                  htmlFor={`rating-${rating}`}
+                  className="text-sm cursor-pointer"
+                >
                   {rating} bintang ke atas
                 </label>
               </div>
@@ -96,90 +112,6 @@ export default function CategoryFilters() {
           </div>
         </CardContent>
       </Card>
-
-      {/* Availability */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-sm">Ketersediaan</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {["Tersedia Hari Ini", "Tersedia Besok", "Weekend Available"].map((availability) => (
-              <div key={availability} className="flex items-center space-x-2">
-                <Checkbox
-                  id={availability}
-                  onCheckedChange={(checked) => {
-                    if (checked) {
-                      addFilter(availability)
-                    } else {
-                      removeFilter(availability)
-                    }
-                  }}
-                />
-                <label htmlFor={availability} className="text-sm cursor-pointer">
-                  {availability}
-                </label>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Location */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-sm">Area Layanan</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {["Jakarta Pusat", "Jakarta Selatan", "Jakarta Barat", "Jakarta Timur", "Jakarta Utara"].map((area) => (
-              <div key={area} className="flex items-center space-x-2">
-                <Checkbox
-                  id={area}
-                  onCheckedChange={(checked) => {
-                    if (checked) {
-                      addFilter(area)
-                    } else {
-                      removeFilter(area)
-                    }
-                  }}
-                />
-                <label htmlFor={area} className="text-sm cursor-pointer">
-                  {area}
-                </label>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Service Type */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-sm">Jenis Layanan</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {["Perbaikan", "Pemasangan", "Maintenance", "Konsultasi"].map((type) => (
-              <div key={type} className="flex items-center space-x-2">
-                <Checkbox
-                  id={type}
-                  onCheckedChange={(checked) => {
-                    if (checked) {
-                      addFilter(type)
-                    } else {
-                      removeFilter(type)
-                    }
-                  }}
-                />
-                <label htmlFor={type} className="text-sm cursor-pointer">
-                  {type}
-                </label>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
     </div>
-  )
+  );
 }
