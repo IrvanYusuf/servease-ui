@@ -79,7 +79,7 @@ export function LoginForm({ className }: React.ComponentProps<"form">) {
                 <FormControl>
                   <Input
                     placeholder="Enter your email"
-                    autoComplete="false"
+                    autoComplete="off"
                     {...field}
                   />
                 </FormControl>
