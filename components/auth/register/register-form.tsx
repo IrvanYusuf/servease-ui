@@ -109,6 +109,7 @@ const RegisterForm = ({ role }: { role: string }) => {
                     type="text"
                     placeholder="Masukkan username"
                     className="pl-10"
+                    autoComplete="false"
                     {...field}
                   />
                 </div>
@@ -131,6 +132,7 @@ const RegisterForm = ({ role }: { role: string }) => {
                     type="text"
                     placeholder="Masukkan nama lengkap"
                     className="pl-10"
+                    autoComplete="false"
                     {...field}
                   />
                 </div>
@@ -154,6 +156,7 @@ const RegisterForm = ({ role }: { role: string }) => {
                     type="email"
                     placeholder="Masukkan email"
                     className="pl-10"
+                    autoComplete="false"
                     {...field}
                   />
                 </div>

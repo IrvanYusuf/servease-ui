@@ -77,7 +77,11 @@ export function LoginForm({ className }: React.ComponentProps<"form">) {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your email" {...field} />
+                  <Input
+                    placeholder="Enter your email"
+                    autoComplete="false"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
